@@ -1,4 +1,4 @@
-FROM land007/gocv:latest
+FROM land007/gocv:centos
 
 MAINTAINER Yiqiu Jia <yiqiujia@hotmail.com>
 
@@ -21,4 +21,7 @@ RUN mkdir $GOPATH/src/exiffix
 COPY gopath/src/exiffix/decode.go $GOPATH/src/exiffix
 RUN cd $GOPATH/src/exiffix && go build && go install
 
+#ubuntu
 #docker stop golang-web ; docker rm golang-web ; docker run -it --privileged --name golang-web -p 20022:20022 land007/golang-web:latest
+#centos
+#docker stop golang-web ; docker rm golang-web ; docker run -it --privileged --name golang-web -p 20022:20022 land007/golang-web:centos
