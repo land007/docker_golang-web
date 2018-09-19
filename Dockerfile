@@ -17,8 +17,8 @@ RUN go get -u github.com/nfnt/resize
 #图片exif
 RUN go get -u github.com/disintegration/imaging
 RUN go get -u github.com/rwcarlsen/goexif/exif
-RUN mkdir $GOPATH/src/exiffix
-ADD gopath/src/exiffix/decode.go $GOPATH/src/exiffix
-RUN cd $GOPATH/src/exiffix && go build && go install
+RUN mkdir /usr/local/go/path/src/exiffix
+ADD gopath/src/exiffix/decode.go /usr/local/go/path/src/exiffix
+RUN cd /usr/local/go/path/src/exiffix && go build && go install
 
 #docker stop golang-web ; docker rm golang-web ; docker run -it --privileged --name golang-web -p 20022:20022 land007/golang-web:latest
