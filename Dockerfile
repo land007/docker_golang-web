@@ -18,7 +18,7 @@ RUN go get -u github.com/nfnt/resize
 RUN go get -u github.com/disintegration/imaging
 RUN go get -u github.com/rwcarlsen/goexif/exif
 RUN mkdir $GOPATH/src/exiffix
-COPY gopath/src/exiffix/decode.go $GOPATH/src/exiffix
+ADD gopath/src/exiffix/decode.go $GOPATH/src/exiffix
 RUN cd $GOPATH/src/exiffix && go build && go install
 
 #ubuntu
