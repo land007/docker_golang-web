@@ -13,6 +13,7 @@ RUN go get github.com/BurntSushi/toml gopkg.in/mgo.v2
 RUN go get gopkg.in/go-playground/validator.v9
 RUN go get -u github.com/nfnt/resize
 #RUN go get github.com/tools/godep
+RUN go get github.com/satori/go.uuid github.com/robfig/cron
 
 #图片exif
 RUN go get -u github.com/disintegration/imaging
