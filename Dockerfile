@@ -21,4 +21,7 @@ RUN mkdir $GOPATH/src/exiffix
 COPY gopath/src/exiffix/decode.go $GOPATH/src/exiffix
 RUN cd $GOPATH/src/exiffix && go build && go install
 
+RUN echo $(date "+%Y-%m-%d_%H:%M:%S") > /.image_time
+RUN echo "land007/golang-web" > /.image_name
+
 #docker stop golang-web ; docker rm golang-web ; docker run -it --privileged --name golang-web -p 20022:20022 land007/golang-web:latest
