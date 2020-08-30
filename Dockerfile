@@ -2,22 +2,22 @@ FROM land007/gocv:latest
 
 MAINTAINER Yiqiu Jia <yiqiujia@hotmail.com>
 
-RUN go get -u github.com/kataras/iris && \
-	go get -u github.com/go-sql-driver/mysql && \
-	go get -u github.com/gin-gonic/gin && \
-	go get github.com/oxequa/realize && \
-	go get github.com/gorilla/mux && \
-	go get github.com/ivpusic/neo && \
-	go get github.com/ivpusic/neo/cmd/neo && \
-	go get github.com/BurntSushi/toml gopkg.in/mgo.v2 && \
-	go get gopkg.in/go-playground/validator.v9 && \
-	go get -u github.com/nfnt/resize && \
+RUN GO111MODULE=on go get github.com/kataras/iris@master && \
+	GO111MODULE=auto go get -u github.com/go-sql-driver/mysql && \
+	GO111MODULE=auto go get -u github.com/gin-gonic/gin && \
+	GO111MODULE=auto go get github.com/oxequa/realize && \
+	GO111MODULE=auto go get github.com/gorilla/mux && \
+	GO111MODULE=auto go get github.com/ivpusic/neo && \
+	GO111MODULE=auto go get github.com/ivpusic/neo/cmd/neo && \
+	GO111MODULE=auto go get github.com/BurntSushi/toml gopkg.in/mgo.v2 && \
+	GO111MODULE=auto go get gopkg.in/go-playground/validator.v9 && \
+	GO111MODULE=auto go get -u github.com/nfnt/resize && \
 #	go get github.com/tools/godep
-	go get github.com/satori/go.uuid github.com/robfig/cron && \
+	GO111MODULE=auto go get github.com/satori/go.uuid github.com/robfig/cron && \
 #图片exif
-	go get -u github.com/disintegration/imaging && \
-	go get -u github.com/rwcarlsen/goexif/exif && \
-	go get github.com/iris-contrib/middleware/cors && \
+	GO111MODULE=auto go get -u github.com/disintegration/imaging && \
+	GO111MODULE=auto go get -u github.com/rwcarlsen/goexif/exif && \
+	GO111MODULE=on go get github.com/iris-contrib/middleware/cors && \
 	mkdir /usr/local/go/path/src/exiffix
 ADD gopath/src/exiffix/decode.go /usr/local/go/path/src/exiffix
 RUN ls /usr/local/go/path/src/exiffix && \
